@@ -1,0 +1,443 @@
+# Day 1
+
+# Test1
+
+
+	public class Test1 {
+
+		public static void main(String[] args) {
+		
+			System.out.println("안녕!");
+			System.out.println("안녕하세요.");
+
+		}
+
+	}
+
+# Test2
+
+	public class Test1 {
+
+		public static void main(String[] args) {
+
+			//변수상자
+			String name = "홍길동1";
+			System.out.println("이름 : " + name);
+		
+			String name2;
+			int age1;
+		
+			name2 = "홍길동2";
+			age1 = 21;
+			System.out.println("이름 : " + name2);
+			System.out.println("나이 : "+ age1);
+		}
+
+	}
+
+
+# Test3
+
+	public class Jihwan {
+
+		public static void main(String[] args) {
+		
+			// 변수상자를 만들고 값을 넣기 (초기화)
+			String name1 = "홍길동1";
+			int age1 = 21;
+		
+			System.out.println("이름 : " + name1);
+			System.out.println("나이 : "+ age1);
+		
+			// 변수상자만 만들기
+			String name2;
+			name2 = "홍길동2";
+			int age2; 
+			age2 = 22;
+
+		
+			System.out.println("이름 : " + name2);
+			System.out.println("나이 : "+ age2);
+		
+			String name3 = "홍길동3";
+			int age3 = 23;
+		
+			System.out.println("이름 : " + name3);
+			System.out.println("나이 : " + age3);
+		
+			// 값을 더하기
+			int age4 = 10;
+			int age5 = 20;
+		
+			int result1 = age4 + age5; 
+			System.out.println(result1);
+  
+			int age6 = 50;
+			age6 = age4 + age5;
+			System.out.println("age6 : " + age6);
+    
+		}
+
+	}
+
+# Test4
+
+
+	public class test1 {
+	
+		public static void main(String[] args) {
+		
+			// if문
+		
+			// age1이라는 이름의 변수상자(변수상자의 크기는 int)를 만들고 21이라는 값을 넣어줍니다.
+			int age1 = 21;
+		
+			if(age1 > 20) {	//true (맞다)
+				System.out.println("나이가 20살보다 많습니다.");
+			} else {
+				System.out.println("나이가 20살보다 적거나 같습니다.");
+			}
+			
+			int age2 = 19;
+			
+			if(age2 > 20) {	//true (맞다)
+				System.out.println("나이가 20살보다 많습니다.");
+			} else {
+				System.out.println("나이가 20살보다 적거나 같습니다.");
+			}
+			
+			int age3 = 20;
+			if(age3 > 20) {
+				System.out.println("나이가 20살보다 많습니다.");
+			} else if (age3 == 20) {
+				System.out.println("나이가 20살입니다.");
+			} else {
+				System.out.println("나이가 20살보다 적습니다.");
+			}
+		}
+
+	}
+ 
+# Test5
+
+	public class test1 {
+	
+		public static void main(String[] args) {
+			
+			// for문
+			
+			int count = 0;
+			count = count + 1;
+			count = count + 2;
+			count = count + 3;
+			count = count + 4;
+			count = count + 5;
+			count = count + 6;
+			count = count + 7;
+			count = count + 8;
+			count = count + 9;
+			count = count + 10;
+			System.out.println("count의 값 : "+count);
+			
+			int count2 = 0;
+			for(int i = 0; i < 10; i++) {
+				count2 = count2 + (i+1);
+			}
+			System.out.println("count2의 값 : " +count2);
+			int count3 = 0;
+				for(int i = 1; i < 11; i++) {
+				count3 = count3 + i;
+			}
+			System.out.println("count3의 값 : " + count3);
+		}
+
+	}	
+
+# Test6
+	public class test1 {
+	
+		public static void main(String[] args) {
+			//함수
+			int result = add(10,20); 
+			System.out.println("더하기 결과 : " + result);
+		}
+	
+		static int add(int a, int b) {
+			int result = a + b;
+		return result;
+		}
+	}
+
+
+# Test7
+
+	public class Test1 {
+
+		public static void main(String[] args) {
+		
+			// print1이라는 이름의 함수상자를 실행해요.
+			print1();
+			print1();
+			
+			// walk라는 이름의 함수상자를 실행해요.
+			walk(10);
+		
+			// add라는 이름의 함수상자를 실행해요.
+			int a = 10;
+			int b = 10;
+			int result = add(a,b);
+			System.out.println("더하기 결과 : " + result);
+		}
+	
+		// print1이라는 이름의 함수상자를 만들어요.
+		static void print1() {
+			System.out.println("print1 함수가 실행되었어요.");
+		}
+		
+		static void walk(int speed) {
+			System.out.println("사람이 " + speed + "km 속도로 걸어갑니다.");
+		}
+	
+		static int add(int a, int b){
+			return a + b;
+		}
+	}
+
+
+# Test 8
+
+	public class test1 {
+
+		public static void main(String[] args) {
+	
+			int a = 20;
+			int b = 10;
+		
+			int result1 = add(a,b);
+			System.out.println(result1);
+			
+			int result2 = div(a,b);
+		
+			System.out.println(result2);
+		
+			int result3 = s(a,b);
+			System.out.println(result3);
+		
+			int result4 = m(a,b);
+			System.out.println(result4);
+
+		}
+	
+		static int add(int a,int b) {
+			int result = a + b;
+			return result;
+		
+	
+		}
+		static int div(int a, int b) {
+			int result = a/b;
+			return result;
+		}
+	
+		static int s(int a, int b) {
+			int result = a-b;
+			return result;
+		}
+		
+		static int m(int a, int b) {
+			int result = a*b;
+			return result;
+		}	
+
+# HW1
+
+	import java.util.Scanner;
+
+	public class hw1 {
+
+		public static void main(String[] args) {
+		
+			Scanner sc = new Scanner(System.in);
+		
+			System.out.println("입장하는 성인의 수를 입력해주십시오.");
+			int Numadults = sc.nextInt();
+			System.out.println("입장하는 어린이의 수를 입력해주십시오.");
+			int Numkids = sc.nextInt();
+
+		
+			int total_price = price(Numadults, Numkids);
+			System.out.println("성인 "+Numadults+"명 "+"어린이 "+Numkids+ "명 입니다.");
+			if(Numadults+Numkids >= 5) {
+				System.out.println("총원 5명 이상으로 단체 할인이 적용되었습니다.");
+			}
+			System.out.println("총 가격 "+total_price+"입니다.");
+	
+		}
+		
+		static int price(int Num_adults,int Num_kids) {
+			int result = 0;
+			int num = Num_adults+Num_kids;
+			if(num >= 5) {
+				result = ((Num_adults*20000 +Num_kids*9900)*8/10);
+			}else {
+				result = ((Num_adults*20000) +(Num_kids*9900));
+			}
+			return result;
+		}
+
+	}
+
+# HW1_1
+	import java.util.Scanner;
+
+	public class hw1_1 {
+
+		public static void main(String[] args) {
+		
+			Scanner sc = new Scanner(System.in);
+		
+			System.out.println("입장하는 성인의 수를 입력해주십시오.");
+			int Numadults = sc.nextInt();
+			System.out.println("입장하는 어린이의 수를 입력해주십시오.");
+			int Numkids = sc.nextInt();
+			int Priceadults = 20000;
+			int Pricekids = 9900;
+	
+		
+			int total_price = price(Numadults, Numkids, Priceadults, Pricekids);
+			System.out.println("성인 "+Numadults+"명 "+"어린이 "+Numkids+ "명 입니다.");
+			if(Numadults+Numkids >= 5) {
+				System.out.println("총원 5명 이상으로 단체 할인이 적용되었습니다.");
+			}
+			System.out.println("총 가격 "+total_price+"입니다.");	
+
+		}
+	
+		static int price(int Num_adults,int Num_kids,int Cost_adults, int Cost_kids) {
+			int result = 0;		
+			int num = Num_adults+Num_kids;
+			if(num >= 5) {
+				result = ((Num_adults*Cost_adults +Num_kids*Cost_kids)*8/10);
+			}else {
+				result = ((Num_adults*Cost_adults) +(Num_kids*Cost_kids));
+			}
+			return result;
+		}
+	
+	}
+	
+
+# HW1_2
+
+	public class Test2 {
+	
+		public static void main(String[] args) {
+			
+			// 성인 수
+			int adultCount = 3;
+			
+			// 어린이 수
+			int childCount = 2;
+			
+			// 입장료 계산하기
+			
+			// 성인 1인당 요금
+			int adultFee = 20000;
+			
+			// 어린이 1인당 요금
+			int childFee = 9900;
+			
+			
+			// 입장료 계산하는 함수상자 실행하기
+			
+			double totalFee = calculate(adultCount, childCount, adultFee, childFee);
+			
+			// type casting(형변환)
+			int totalFeeInt = (int) totalFee;
+	
+			// 화면에 출력
+			System.out.println("성인 수 : " + adultCount);
+			System.out.println("어린이 수 : " + childCount);
+			System.out.println("입장료 : " + totalFeeInt);
+		}
+	
+		static double calculate(int adultCount, int childCount, int adultFee, int childFee) {
+	
+			// 입장료 계산
+			int fee = (adultCount * adultFee) + (childCount * childFee);
+			System.out.println("fee : "+ fee);
+			
+			// 입장료
+			double totalFee = fee;
+					
+			// 단체 할인
+			
+			// 할인률
+			double discount = 0.2;
+			
+			// 전체 사람 수 계산하기
+			int totalCount = adultCount + childCount;
+			if (totalCount >= 5) {	//5명 이상이라면
+				totalFee = fee - (fee * discount);
+			}
+			
+			return totalFee;
+			
+		}
+	
+	}
+	
+#HW1_3
+
+	public class Test4 {
+	
+		public static void main(String[] args) {
+			
+			// 어른 수
+			int adultCount = 4;
+			
+			// 어린이 수
+			int childCount = 2;
+			
+			// 어른 입장료
+			int adultFee = 20000;
+			
+			// 어린이 입장료
+			int childFee = 9900;
+			
+	
+			// 할인율
+			double discountpercent = 0.2;
+			
+			// 총 인원
+			int totalCount = adultCount + childCount;
+			
+			double discount = discount(totalCount, discountpercent);
+			double totalFee = calculate(adultCount, childCount, adultFee, childFee, discount);
+			
+			int realtotalFee = (int)totalFee;
+			
+			
+			// 화면에 출력
+			System.out.println("성인 수 : " + adultCount);
+			System.out.println("어린이 수 : " + childCount);
+			System.out.println("할인율 : " + discount);
+			System.out.println("입장료 : " + realtotalFee);
+			
+		}
+		
+		static double calculate(int adultCount, int childCount, int adultFee, int childFee, double discount) {
+			double totalFee = (adultCount * adultFee)+(childCount * childFee) - ((adultCount * adultFee)+(childCount * childFee))*discount;
+			return totalFee;
+		}
+		
+		static double discount(int totalCount,  double discountpercent) {
+			double result = 0;
+			if (totalCount >= 5) {
+				result = discountpercent;
+			}
+			return result;
+			
+		}
+	
+	}
