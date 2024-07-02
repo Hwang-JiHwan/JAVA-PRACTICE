@@ -1,0 +1,232 @@
+# Day2
+
+# Fish
+
+  public class Fish {
+  	String name;
+  	
+  	int age;
+  }
+
+# Person
+  
+  public class Person {
+  	
+  	String name;
+  	
+  	int age;
+  	
+  	void walk(int speed) {
+  		System.out.println("사람이 " + speed + "km 속도로 걸어갑니다.");
+  	}
+  	
+  	Person(){
+  		
+  	}
+  	
+  	Person(String name , int age){
+  		this.name = name;
+  		this.age = age;
+  	}
+  
+  }
+
+# Test
+
+  public class Test {
+  
+  	public static void main(String[] args) {
+  		
+  		String name = "홍길동1";
+  		int age = 21;
+  		
+  		System.out.println("이름 : " + name + ", 나이 : " + age);
+  		
+  		// 붕어빵 틀에서 붕어빵 찍어내기
+  		Fish fish1 = new Fish();
+  		fish1.name = "물고기1";
+  		fish1.age = 2;
+  		
+  		System.out.println("물고기1 의 이름 : " + fish1.name + ", 나이 : " + fish1.age);
+  		
+  		// 사람을 위한 붕어빵 틀에서 사람 찍어내기
+  		Person person1 = new Person("홍길동1",21);
+  		//person1.name = "홍길동2";
+  		//person1.age = 21;
+  		person1.walk(8);
+  		
+  		
+  		
+  	}
+  
+  }
+
+# Fish
+
+  public class Fish {
+  	
+  	String name;
+  	
+  	int age;
+  	
+  	Fish(String name, int age){
+  		this.name = name;
+  		this.age = age;
+  	}
+  
+  }
+
+# Shark
+
+  public class Shark {
+  	
+  	String name;
+  
+  }
+
+# Sea
+
+  public class Sea {
+  	
+  	String name;
+  	
+  	Fish fish1;
+  	
+  	Fish fish2;
+  
+  }
+
+# Test
+
+
+  public class Test {
+  
+  	public static void main(String[] args) {
+  		
+  		// 물고기 틀(클래스)에서 진짜 물고기(객체) 만들기
+  		Fish fish1 = new Fish("고기1",1);
+  		//fish1.name = "고기1";
+  		
+  		Fish fish2 = new Fish("고기2",2);
+  		//fish2.name = "고기2";
+  		// 바다 틀에서 진짜 바다 만들기
+  		Sea sea1 = new Sea();
+  		sea1.name = "태평양";
+  		sea1.fish1 = fish1;
+  		sea1.fish2 = fish2;
+  		
+  		System.out.println("바다 안에 사는 물고기 1 : " + sea1.fish1.name + ", 물고기 2 : " + sea1.fish2.name);
+  		
+  
+  	}
+  
+  }
+# Person
+
+  public class Person {
+  	
+  	String name;
+  	int age;
+  	String phonenumber;
+  	
+  	Person(String name,int age, String phonenumber) {
+  		this.name = name;
+  		this.age = age;
+  		this.phonenumber = phonenumber;
+  	}
+  
+  }
+# Dog
+
+  public class Dog {
+  	
+  	String name;
+  	
+  	Dog(String name){
+  		this.name = name;
+  	}
+  
+  }
+
+# Cat
+
+  public class Cat {
+  	
+  	String name;
+  	
+  	Cat(String name){
+  		this.name = name;
+  	}
+  
+  }
+
+# House
+
+  public class House {
+  	String house1;
+  	String house2;
+  	String house3;
+  	
+  	String name;
+  	
+  	Person person;
+  	Dog dog;
+  	Cat cat;
+  	
+  	House(String name, Person person, Dog dog, Cat cat){
+  		this.name = name;
+  		this.person = person;
+  		this.dog = dog;
+  		this.cat = cat;
+  	}
+  	
+  }
+
+# HW2
+
+  public class HW2 {
+  
+  	public static void main(String[] args) {
+  		// 첫번째 집
+  		Person person1 = new Person("김길동",20, "01012345678");
+  		Dog dog1 = new Dog("멍멍1");
+  		Cat cat1 = new Cat("야옹1");				
+  		
+  		
+  		House house1 = new House("1번집", person1, dog1, cat1);
+  		
+  		// 두번째 집
+  		
+  		Person person2 = new Person("이길동",21, "01023456789");
+  		Dog dog2 = new Dog("멍멍2");
+  		Cat cat2 = new Cat("야옹2");
+  		
+  		
+  		House house2 = new House("2번집", person2, dog2, cat2);
+  		
+  		// 세번째 집
+  		Person person3 = new Person("박길동",21, "01034567890");
+  		Dog dog3 = new Dog("멍멍3");
+  		Cat cat3 = new Cat("야옹3");
+  		
+  		House house3 = new House("3번집", person3, dog3, cat3);
+  		
+  		// 화면출력
+  		
+  		
+  		
+  		System.out.println("집의 이름 : " + house1.name + ", 사람 이름 : " + house1.person.name + ", 나이 : " + house1.person.age + ", 전화번호 : " + house1.person.phonenumber 
+  				+ ", 강아지 이름 : " + house1.dog.name 
+  				+ ", 고양이 이름 : " + house1.cat.name);
+  		
+  		System.out.println("집의 이름 : " + house2.name + ", 사람 이름 : " + house2.person.name + ", 나이 : " + house2.person.age + ", 전화번호 : " + house2.person.phonenumber 
+  				+ ", 강아지 이름 : " + house2.dog.name 
+  				+ ", 고양이 이름 : " + house2.cat.name);
+  		
+  		System.out.println("집의 이름 : " + house3.name + ", 사람 이름 : " + house3.person.name + ", 나이 : " + house3.person.age + ", 전화번호 : " + house3.person.phonenumber 
+  				+ ", 강아지 이름 : " + house3.dog.name 
+  				+ ", 고양이 이름 : " + house3.cat.name);
+  
+  	}
+  
+  }
