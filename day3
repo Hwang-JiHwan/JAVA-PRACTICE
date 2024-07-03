@@ -1,0 +1,187 @@
+# Day 3
+
+# 복습1
+  public class Test {
+  
+  	public static void main(String[] args) {
+  		
+  		// 변수 상자 만들기
+  		String name;
+  		int age;
+  		
+  		// 변수 상자의 값을  넣기 (할당)
+  		name = "홍길동";
+  		age = 10;
+  		
+  		System.out.println("이름 : " + name + ", 나이 : " + age);
+  
+  	}
+  
+  }
+
+# 복습2
+
+  public class Test2 {
+  
+  	public static void main(String[] args) {
+  		
+  		// 함수 상자 실행하기
+  		int result = add(10, 10);
+  		System.out.println("더하기 결과 : " + result);
+  	}
+  	
+  	// 함수 상자 만들기
+  	static int add(int a, int b) {
+  		System.out.println("add 함수 실행됨.");
+  		
+  		int result = a + b;
+  		return result;
+  	}
+  
+  }
+
+# 복습3
+
+  public class Fish {
+  	
+  	String name;
+  	int age;
+  	
+  	// 생성자 함수 (실제 붕어빵을 만들 때 실행됨.)
+  	Fish(String name, int age) {
+  		System.out.println("Fish의 생성자 함수 호출됨.");
+  		
+  		this.name = name;
+  		this.age = age;
+  	}
+  	
+  }
+
+
+  public class Sea {
+  	
+  	String name = "태평양";
+  	
+  	Fish fish;
+  	
+  	String text = "바다 안에 있는 물고기의 이름 : ";
+  
+  }
+  
+  
+  import java.util.ArrayList;
+  
+  public class Test3 {
+  
+  	public static void main(String[] args) {
+  		
+  		// 클래스 사용하기 (붕어빵 틀에서 붕어빵 찍어내기)
+  		Fish fish1 = new Fish("붕어빵1", 1);
+  		// fish1.name = "붕어1";
+  		// fish1.age = 20;
+  		
+  		Fish fish2 = new Fish("붕어빵2", 2);
+  		// fish2.name = "붕어2";
+  		// fish2.age = 30;
+  		
+  		System.out.println("첫 번째 붕어빵의 이름 : " + fish1.name + ", 나이 : " + fish1.age);
+  		
+  		// 바다 안에 붕어빵 넣기;
+  		Sea sea1= new Sea();
+  		sea1.fish = fish2;
+  		
+  		System.out.println("바다 안에 있는 물고기의 이름 : " + sea1.fish.name);
+  		System.out.println(sea1.text + sea1.fish.name);
+  		
+  		// 하나의 변수 상자 안에 여러 개의 값을 넣어두기
+  		ArrayList<String> names = new ArrayList<String>();
+  		names.add("홍길동1");
+  		names.add("홍길동2");
+  		
+  		System.out.println("이름의 갯수 : " + names.size());
+  		System.out.println("첫 번째 이름 : " + names.get(0));
+  	}
+  
+  }
+
+# Fish 
+    public class Fish {
+  	
+  	// Fish라는 이름의 붕어빵 틀에 붙어있는 진짜 변수상자
+  	static int count = 0;
+  	
+  	String name;
+  	int age;
+  	
+  	Fish() {
+  		count = count + 1;
+  	}
+  	
+  	void swim() {
+  		System.out.println("붕어빵이 헤엄칩니다.");
+  	}
+  
+  }
+
+# Shark
+  
+  public class Shark extends Fish {
+  	
+  	// 함수상자를 덮어쓰기 (재정의 : override)
+  	void swim() {
+  		System.out.println("상어빵이 헤엄칩니다.");
+  	}
+  	
+  	void run() {
+  		System.out.println("상어빵이 달려갑니다.");
+  	}
+  
+  # Test
+    
+  public class Test {
+  
+  	public static void main(String[] args) {
+  		
+  		// int count = 0;
+  		
+  		
+  		Fish fish1 = new Fish();
+  		fish1.name = "붕어빵1";
+  		
+  		//Fish.count = Fish.count +1;
+  		
+  		Shark shark1 = new Shark();
+  		shark1.name ="상어빵1";
+  		
+  		//Fish.count = Fish.count +1;
+  		
+  		System.out.println("상어빵의 이름 : " + shark1.name);
+  		System.out.println("몇 마리? : " + Fish.count);
+  		
+  		fish1.swim();
+  		shark1.swim();
+  		shark1.run();
+  		
+  		Fish shark2 = new Shark();
+  		shark2.name = "상어빵2";
+  		
+  		//Fish.count = Fish.count + 1;
+  		
+  		// shark2.run();
+  		
+  		Shark shark3 = (Shark)shark2;
+  		shark3.run();
+  		
+  		//Fish.count = Fish.count + 1;
+  		System.out.println("몇 마리? : " + Fish.count);
+  		
+  		double temp = 36.5;
+  		double temp2 = Math.floor(temp);
+  		System.out.println("원래 값 : " + temp + "바뀐 값 : " + temp2);
+  	}
+  
+  }
+
+
+
+
