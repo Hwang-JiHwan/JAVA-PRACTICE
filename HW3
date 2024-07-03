@@ -1,0 +1,200 @@
+# HW3
+과제 내용
+(1) 집(House) 클래스를 만들고 메인 함수 안에서 진짜 집을 만들어낸다.
+집 클래스는 com.lx.house 패키지 안에 만든다.
+집 클래스 안에는 집의 이름과 여러 마리의 강아지들을 넣어둘 수 있는 변수 상자를 정의한다.
+변수상자는 다른 패키지에서 사용할 수 없도록 public을 붙이지 않고 get, set 함수상자를 추가하여 함수상자를 이용해 접근할 수 있도록 한다.
+
+(2) 강아지(Dog)클래스를 만들고 메인 함수 안에서 진짜 강아지를 만들 때마다 만든 강아지를 집 안의 변수상자 안에 넣도록 한다.
+강아지 클래스는 com.lx.animal 패키지 안에 만든다.
+강아지 클래스 안에서는 강아지의 이름,나이 전화번호를 넣어둘 수 있는 변수상자를 정의한다.
+변수상자는 다른 패키지에서 사용할 수 없도록 public을 붙이지 않고 get, set 함수상자를 추가하여 함수상자를 이용해 접근할 수 있도록 한다.
+
+(3) 진짜 강아지는 메인 함수에서 한 마리씩 만들면서 집 안의 변수상자에 넣도록 한다.
+
+(4) 강아지들을 만들어 집 안에 있는 변수상자에 넣고 나면 콘솔 창에 몇 마리의 강아지가 변수상자에 들어 있는지 출력한다.
+
+(6) 마지막 강아지의 이름, 나이, 전화번호를 콘솔 창에 출력한다.
+
+(7) 집 클래스 안에 run 함수를 만든다.
+메인 함수에서 집의 run 함수를 실행한다.
+강아지가 한 마리도 없으면 콘솔 창에 강아지가 없다는 글자를 출력한다.
+강아지가 한 마리라도 있으면 콘솔 창에 첫번째 강아지의 이름을 출력한다.
+
+도움말
+(1) House라는 이름의 클래스를 만들고 집의 이름과 강아지들을 담아둘 수 있도록 한다.
+
+(2) Dog라는 이름의 클래스를 만들고 이름, 나이, 전화번호를 담아둘 수 있도록 한다.
+
+(3) House안에 Dog 객체들을 담아둘 변수상자는 ArrayList를 이용해 만든다.
+ArrayList<Dog>dogs = new ArrayList<Dog>();
+
+(4) run 함수 안에서 강아지 마리 수를 알아내고 싶다면 dogs.size(); 코드를 사용하고, 강아지 마리수가 한 마리라도 있는지를 비교하고 싶다면 if문을 사용한다.
+
+(5) 집 안의 모든 가앙지 이름을 출력하고 싶다면 for문을 사용한다.
+
+  # House
+  package com.lxlx.house;
+  
+  import java.util.ArrayList;
+  
+  import com.lxlx.animal.Dog;
+  
+  public class House {
+  	
+  	String name;
+  	ArrayList<Dog> dogs;
+  	
+  	public String getName() {
+  		return name;
+  	}
+  	
+  	public void setName(String name) {
+  		return;
+  	}
+  	
+  	public House(String setName) {
+  		this.name = setName;
+  		this.dogs = new ArrayList<Dog>();
+  	}
+  	
+  	
+  	
+  	public void addDog(Dog dog){
+  		this.dogs.add(dog);
+  	}
+  	
+  	public void howmanyDog() {
+  		System.out.println("집 안에 총 " + dogs.size() +"마리의 개가 있습니다.");
+  	}
+  	
+  	public void allDogName() {
+  		for (int i = 0 ; i < dogs.size(); i++) {
+  			System.out.println((i+1) + "번째 강아지의 이름은 " + dogs.get(i).getName() + " 입니다.");
+  		}
+  	}
+  	
+  	public void lastDog() {
+  		System.out.println("마지막 강아지의 이름은 " + dogs.get(dogs.size()-1).getName() + " 입니다.");
+  		System.out.println("마지막 강아지의 나이는 " + dogs.get(dogs.size()-1).getAge() + " 입니다.");
+  		System.out.println("마지막 강아지의 번호는 " + dogs.get(dogs.size()-1).getPhone() + "입니다.");
+  	}
+  	
+  	public void run() {
+  		if (dogs.size() < 1) {
+  			System.out.println("강아지가 한마리도 없습니다.");
+  		} else {
+  			System.out.println("강아지가 " + dogs.size() + "마리 있습니다.");
+  			System.out.println("첫번째 강아지의 이름은 " + dogs.get(0).getName() + " 입니다.");
+  			
+  		}
+  	}
+  }
+
+# Dog
+  package com.lxlx.animal;
+  
+  public class Dog {
+  	
+  	String name;
+  	int age;
+  	String phone;
+  	
+  	public String getName() {
+  		return name;
+  	}
+  	
+  	public void setName(String name) {
+  		return;
+  	}
+  	
+  	public int getAge() {
+  		return age;
+  	}
+  	
+  	public void setAge(int age) {
+  		return;
+  	}
+  	
+  	public String getPhone() {
+  		return phone;
+  	}
+  	
+  	public void setPhone(String phone) {
+  		return;
+  	}
+  	
+  	public Dog(String getName, int getAge, String getPhone) {
+  		this.name = getName;
+  		this.age = getAge;
+  		this.phone = getPhone;
+  	}
+  	
+  
+  }
+
+# Main
+  import com.lxlx.animal.Dog;
+  import com.lxlx.house.House;
+  
+  public class Main {
+  
+  	public static void main(String[] args) {
+  		
+  		House house1 = new House("집1");
+  		
+  		Dog dog1 = new Dog("개1", 1, "010-1111-1111");
+  		house1.addDog(dog1);
+  		
+  		Dog dog2 = new Dog("개2", 2, "010-2222-2222");
+  		house1.addDog(dog2);
+  		
+  		Dog dog3 = new Dog("개3", 3, "010-3333-3333");
+  		house1.addDog(dog3);
+  		
+  		Dog dog4 = new Dog("개3", 3, "010-3333-3333");
+  		house1.addDog(dog4);
+  		
+  		System.out.println("<"+house1.getName()+">");
+  		house1.howmanyDog();
+  		house1.allDogName();
+  		house1.lastDog();
+  		house1.run();
+  		
+  		System.out.println("\n");
+  		
+  		House house2 = new House("집2");
+  		
+  		Dog dog5 = new Dog("개5", 5 , "010-5555-5555");
+  		house2.addDog(dog5);
+  		
+  		Dog dog6 = new Dog("개6", 6 , "010-6666-6666");
+  		house2.addDog(dog6);
+  		
+  		Dog dog7 = new Dog("개7", 7 , "010-7777-5555");
+  		house2.addDog(dog7);
+  		
+  		Dog dog8 = new Dog("개8", 8 , "010-8888-8888");
+  		house2.addDog(dog8);
+  		
+  		Dog dog9 = new Dog("개9", 9 , "010-9999-9999");
+  		house2.addDog(dog9);
+  		
+  		Dog dog10 = new Dog("개10", 10 , "010-1010-1010");
+  		house2.addDog(dog10);
+  		
+  		System.out.println("<"+house2.getName()+">");
+  		
+  		house2.howmanyDog();
+  		house2.allDogName();
+  		house2.lastDog();
+  		house2.run();
+  		
+  		
+  		
+  		
+  		
+  		
+  	}
+  
+  }
