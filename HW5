@@ -1,0 +1,142 @@
+# Store
+  package com.lx.store;
+  
+  import java.util.ArrayList;
+  
+  public class Store {
+  	
+  	// 매장 이름
+  	String name;
+  	
+  	// 고객 리스트
+  	ArrayList<Customer> customers = new ArrayList<Customer>();
+  	
+  	// 제품 리스트
+  	ArrayList<Product> prodcuts = new ArrayList<Product>();
+  	
+  	// 생성자 함수
+  	public Store(String name){
+  		this.name = name;
+  	}
+  	
+  	// 고객이 물건 결제하기
+  	public void pay(Customer customer, Product product) {
+  		
+  		// 고객이 산 물건을 고객에게 추가하기
+  		customer.items.add(product);
+  		
+  		// 고객이 산 총금액에 합산하기
+  		customer.total = customer.total + product.price;
+  		
+  		//제품이 팔린 총 금액에 합산하기
+  		product.total += product.price;
+  		
+  		
+  	}
+  	
+  
+  }
+
+# Customer
+
+  package com.lx.store;
+  
+  import java.util.ArrayList;
+  
+  public class Customer {
+  	
+  	// 고객 이름
+  	String name;
+  	
+  	// 고객 나이
+  	int age;
+  	
+  	// 고객 전화번호
+  	String mobile;
+  	
+  	// 내가 산 제품들
+  	public ArrayList<Product>items = new ArrayList<Product>();
+  	
+  	// 내가 산 총 금액
+  	public int total = 0;
+  	
+  	// 생성자 함수
+  	public Customer(String name, int age, String mobile){
+  		this.name = name;
+  		this.age = age;
+  		this.mobile = mobile;
+  	}
+  	
+  	// name 변수상자의 값 가져오기
+  	public String getName() {
+  		return this.name;
+  	}
+  
+  }
+
+# Product
+
+  package com.lx.store;
+  
+  public class Product {
+  	
+  	// 제품 이름
+  	public String name;
+  	
+  	// 제품 금액
+  	int price;
+  	
+  	// 팔리 전체 금액
+  	int total = 0;
+  	
+  	// 생성자 함수
+  	public Product(String name, int price){
+  		this.name = name;
+  		this.price = price;
+  	}
+  
+  }
+
+# Main
+  import com.lx.store.Product;
+  import com.lx.store.Customer;
+  import com.lx.store.Store;
+  
+  public class Test {
+  
+  	public static void main(String[] args) {
+  		
+  		// 매장 만들기
+  		Store store1 = new Store("강남역 매장");
+  		Store store2 = new Store("서울역 매장");
+  		
+  		//고객 만들기
+  		Customer customer1 = new Customer("홍길동1", 21, "010-1000-1000");
+  		Customer customer2 = new Customer("홍길동2", 22, "010-2000-2000");
+  		
+  		// 제품 만들기
+  		Product product1 = new Product("Benz", 10000);
+  		Product product2 = new Product("BMW", 25000);
+  		
+  		// 고객이 제품을 결제합니다
+  		store1.pay(customer1, product1);
+  		store1.pay(customer1, product2);
+  		
+  		store1.pay(customer2, product2);
+  		
+  		// 첫번째 고객이 물건을 산 금액은 총 얼마일까요?
+  		System.out.println("고객 " + customer1.getName() + " : " + customer1.total);
+  		
+  		// 첫번째 고객이 산 물건들은 어떤 것들일까요?
+  		System.out.println("제품들 갯수 : " + customer1.items.size());
+  		for(int i = 0; i < customer1.items.size() ; i++) {
+  			System.out.println("    제품 " + i + " : " + customer1.items.get(i).name);
+  			
+  			
+  		}
+  	}
+  
+  }
+
+
+
