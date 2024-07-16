@@ -1,0 +1,468 @@
+# 1
+public class LiteralTest {
+
+	public static void main(String[] args) {
+		
+		//int count = 1.0; 
+		// 1, '1', "1", 1.0
+		// int, char, String, double
+		
+		float f = 1.0f; // 1.0은 double 타입의 리터럴, 근데 변수는 float 타입이여서 오류가 뜸. 
+		double d = 1.0;
+		int i = 1;
+		char c = '1';
+		String s = "1";
+		
+		int amount = '!';
+		
+		
+		
+		System.out.println(amount);
+
+	}
+
+}
+
+# 2
+
+public class Exam77 {
+	
+	public static void main(String[] args) {
+	/*
+	 * 1부터 얼마까지 누적해야 1000000을 초과할까?
+	 * 1+2+3+...+n
+	 * 변수로 뭐가 필요하지?
+	 * 제어문을 뭐로 써야하지?
+	 * 그 후 코딩
+	 */
+	
+	/*
+	 * if - 참 거짓에 따라 분기
+	 * for - 정해진 횟수만큼 반복
+	 * while - 횟수는 모르지만 반복
+	 * switch - 여러 경우에 따라 분기
+	 */
+	
+	
+		int sum = 0;
+		int count = 0;
+		
+		while(sum<=1000000) {
+			count ++;
+			sum += count;
+			//System.out.printf("count = %d, sum = %d\n", count, sum);
+			
+		}
+		
+		System.out.printf("count = %d, sum = %d\n", count, sum);
+		if((count%2) == 0) {
+	
+	}
+
+	}
+}
+
+# 3
+package mymy;
+
+import java.util.Scanner;
+
+public class BasicText {
+
+	public static void main(String[] args) {
+		
+		int random = (int) (Math.random()*100);
+		Scanner scan = new Scanner(System.in); //생성자 호출이고 객체가 생성된다.
+		System.out.println("숫자를 입력하세요!");
+		int input = scan.nextInt();
+		System.out.println(input);
+		/*
+		 *  0~100사이 숫자를 받고 싶음.
+		 *  만약 아니면 다시 입력하여 받아야 한다.
+		 */
+		
+		while(input <0 || input>100) {
+			System.out.println("다시 입력하세요");
+			input = scan.nextInt();
+		}
+	}
+
+}
+
+# 4
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Java_ex_01 {
+
+	public static void main(String[] args) {
+		
+		ArrayList <Integer> list = new ArrayList<>();
+		int number = (int) (Math.random()*100);
+		int count = 1;
+		
+		System.out.println(number);
+		System.out.println("숫자를 입력해주세요.");
+		Scanner scan = new Scanner(System.in);
+		int inputNum = scan.nextInt();
+		
+		
+		
+		while (inputNum != number) {
+			
+			if(inputNum <0 || inputNum>100) {
+				System.out.println("다시 입력하세요");
+				inputNum = scan.nextInt();
+				
+			} else {
+				list.add(inputNum);
+				if (inputNum > number) {
+					System.out.println("아래");
+				} else {
+					System.out.println("위");
+				}
+			
+			inputNum = scan.nextInt(); 
+			count ++;
+			
+			}
+				
+		}
+		list.add(inputNum);
+			
+
+		
+		System.out.printf("%d 번만에 맞추셨습니다.\n", count );
+		
+		for(int i = 0; i < list.size(); i++) {
+			System.out.println((i+1) + "번째 입력한 수 : " + list.get(i));
+		}
+		
+
+	}
+
+}
+
+# 5
+package mymy;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class TT {
+
+   public static void main(String[] args) {
+      ArrayList<Number> numbers = new ArrayList<Number>();
+      
+      
+      int random = (int)(Math.random()*100);
+      Scanner scan = new Scanner(System.in);
+      System.out.println("Up and Down Game ");
+      System.out.println("숫자를 입력하세요!");
+      
+      int input = scan.nextInt();
+      System.out.println(input);
+      
+      
+      while(true) {
+         if(input < random) {
+            numbers.add(input);
+            System.out.println("위");
+            input = scan.nextInt();
+         } else if(input > random) {
+            numbers.add(input);
+            System.out.println("아래");
+            input = scan.nextInt();
+         } else {
+            System.out.println("정답입니다.");
+            System.out.println("입력한 숫자 : " + numbers);
+            break;
+         }
+      }
+       
+   }
+
+}
+
+# 6
+
+public class Myclass {
+
+	public static void main(String[] args) {
+		
+		Class myClass = new Object().getClass();
+
+	}
+
+}
+
+# 7
+
+public class Emp {
+	
+	int count;
+	public int getCount() {
+		return count;
+		Object obj;
+		
+	}
+	
+	public static void main(String[] args) {
+		Object obj = null;
+		String str = null;
+	}
+
+}
+
+# 8
+package basic;
+
+public class BasicTest2 {
+
+	public static void main(String[] args) {
+//		/*
+//		 *  배열, 함수
+//		 */
+//		// 배열의 개념, 특징, 선언할 수 있는지, 생성할 수 있는지, 할당할 수 있는지
+//		// 배열
+//		//int[6] list ; // 배열 선언할 때 크기를 지정할 수 없다.
+//		//int[] list;
+//		//list = new int[]; // 배열 생성시 크기를 지정해야 한다.
+//		//list = new int[5];
+//		//list[5] = 500; //0부터 시작되므로 5는 존재하지 않는다.
+//		
+//		int[] list = new int[5];
+//		for(int i = 0 ; i < 5 ; i++) {
+//			list[i] = (int) (Math.random()*100); // type casting 형변환 해야함.
+//		}
+//		for(int num: list) {
+//			System.out.println(num);
+//		}
+//		for(int i =0; i < list.length; i++) {
+//			System.out.println(list[i]);
+//		}
+		int[] list = makeList(); //존재하지 않은 메서드를 호출했다. 그래서 오류다.
+		
+		printList(list);
+	}
+	// 임의의 숫자 5개를 생성하여 리턴하는 메서드를 정의하시오.
+	// 이름, 매개변수, 리턴타입
+	// 내부내용
+	
+	
+	// 전달받은 배열을 출력한다.
+	private static void printList(int[] list) {
+		for(int num: list) {
+			System.out.println(num);
+		}
+		
+	}
+
+	static int[] makeList() {
+		
+		int[] list = new int[5];
+		for(int i = 0 ; i < 5 ; i++) {
+			list[i] = (int) (Math.random()*100); // type casting 형변환 해야함.
+		}
+		return list;
+	}
+	
+	
+	
+	
+}
+
+
+
+
+
+# 9
+package basic;
+
+public class BasicTest2 {
+
+	public static void main(String[] args) {
+//		/*
+//		 *  배열, 함수
+//		 */
+//		// 배열의 개념, 특징, 선언할 수 있는지, 생성할 수 있는지, 할당할 수 있는지
+//		// 배열
+//		//int[6] list ; // 배열 선언할 때 크기를 지정할 수 없다.
+//		//int[] list;
+//		//list = new int[]; // 배열 생성시 크기를 지정해야 한다.
+//		//list = new int[5];
+//		//list[5] = 500; //0부터 시작되므로 5는 존재하지 않는다.
+//		
+//		int[] list = new int[5];
+//		for(int i = 0 ; i < 5 ; i++) {
+//			list[i] = (int) (Math.random()*100); // type casting 형변환 해야함.
+//		}
+//		for(int num: list) {
+//			System.out.println(num);
+//		}
+//		for(int i =0; i < list.length; i++) {
+//			System.out.println(list[i]);
+//		}
+		int[] list = makeList(); //존재하지 않은 메서드를 호출했다. 그래서 오류다.
+		
+		printList(list);
+	}
+	// 임의의 숫자 5개를 생성하여 리턴하는 메서드를 정의하시오.
+	// 이름, 매개변수, 리턴타입
+	// 내부내용
+	
+	
+	// 전달받은 배열을 출력한다.
+	private static void printList(int[] list) {
+		for(int num: list) {
+			System.out.println(num);
+		}
+		
+	}
+
+	static int[] makeList() {
+		
+		int[] list = new int[5];
+		for(int i = 0 ; i < 5 ; i++) {
+			list[i] = (int) (Math.random()*100); // type casting 형변환 해야함.
+		}
+		return list;
+	}
+	
+	
+	
+	
+}
+
+# 10
+package basic;
+
+import java.util.Calendar;
+
+public class BasicTest3 {
+	public static void main(String[] args) {
+		Calendar cal = Calendar.getInstance(); // cal - 내가 지정한 변수임. 32비트, 64비트에 따라 다름. 32비트이면 4바이트 메모리 공간 을 할당받아서 이름붙인 변수
+		System.out.println(cal.get(Calendar.DAY_OF_MONTH));
+		System.out.println(Calendar.DAY_OF_MONTH);
+		
+		
+	}
+}
+
+# 11
+
+package basic;
+
+import java.awt.List;
+import java.util.ArrayList;
+
+public class JavaEx02 {
+
+	public static void main(String[] args) {
+		/*
+		* 1부터 999까지의 100개의 임의의 수로 이루어진 배열을 생성하는 함수를
+		* 호출하여 배열을 생성한다.
+		- 2.인덱스가 홀수인 수들을 출력하는 함수
+		- 3.배열의 수들의 합을 반환하는 함수
+		- 4.가장 작은 수의 위치(인덱스)를 반환하는 함수
+		- 5.3의 배수만을 새로운 배열에 복사하여 리턴하는 함수
+		option!
+		- 배열의 수들을 한 줄에 10개씩 출력하는 함수, 이때 각 수들은 줄이 맞춰져야 함
+
+
+		5번은 List Collection API를 사용하는 것이 더 적절한다.
+		*/
+		
+		int[] list = makeList();
+		
+		System.out.println("<인덱스가 홀수인 수들을 출력>");
+		array(oddList(list));
+		
+		sumList(list);
+		
+		minList(list);
+		
+		System.out.println("<3의 배수 만큼 새로운 배열에 복사하여 리턴>");
+		array(newList(list));
+		
+	}
+	
+		static int[] makeList() {
+		
+		int[] list = new int[100];
+		for(int i = 0 ; i < 100 ; i++) {
+			list[i] = (int) (Math.random()*1000);
+		}
+		System.out.println("<함수가 호출되어 배열이 생성되었습니다.> \n");
+		return list;	
+	
+		}
+		static int[] oddList(int[] list) {
+			int[] newList = new int[50];
+			for (int i = 0 ; i < newList.length ; i++) {
+				newList[i] = list[2*i+1];
+			}
+			return newList;
+
+			
+		}
+		
+		static void sumList(int[]list) {
+			int result = 0;
+			for(int i = 0; i < list.length ; i++) {
+				result = result + list[i];
+			}
+			
+			
+			System.out.println("\n배열의 수들의 합 : " + result +"\n");
+		}
+		
+		static void minList(int[]list) {
+			int min =list[0] ;
+			int index = 0;
+			
+			for(int i = 0 ; i< list.length; i ++) {
+				if(min>list[i]) {
+					min = list[i];
+					index = i;
+				}			
+			}
+			
+			System.out.println("배열의 가장 작은 수 : " + min + ", 가장 작은 수의 인덱스 : " + index + "\n") ;
+		}
+		
+		
+		static int[] newList(int[]list) {
+			ArrayList<Integer> newList = new ArrayList<>();
+			for(int i = 0 ; i < list.length ; i ++) {
+				if (list[i] % 3 == 0) {
+					newList.add(list[i]);
+				}
+			}
+			
+			int[] newList2 = new int[newList.size()];
+			for(int i = 0; i < newList2.length ; i++) {
+				newList2[i] = newList.get(i);
+			}			
+			return newList2;
+		}
+		
+		
+		static void array(int[]list) {
+			int count = 0;
+			for(int num : list) {
+				count ++;
+				if(count%10 == 0) {
+					System.out.print(num + " \n");
+				
+				}else {
+					System.out.print(num + "\t");
+				}
+			}
+		}
+
+}
+
+
+
+
